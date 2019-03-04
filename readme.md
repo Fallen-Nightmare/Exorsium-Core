@@ -178,7 +178,7 @@ WHY PLAY AT OUR SERVER, WHAT CAN WE OFFER AND GUARANTEED?
 
 | Unmodified Raids & Instances  List | Work | Scripted % | Checked |
 | ------------------------------------ | ---- | ---------- | ------- |
-| Siege Of Orgrimmar                   | Yes  | 80%        | ✔ Yes   |
+| ![Siege Of Orgrimmar](https://github.com/Fallen-Nightmare/Exorsium-Core/blob/master/Custom_inf/Siege_Of_Orgrimmar_inf.md)                   | Yes  | 80%        | ✔ Yes   |
 | Hellfire Citadel                     | Yes  | ?%         | ✔ Yes   |
 | Trial of Valor                       | Yes  | ?%         | ✔ Yes   |
 | Emerald Nightmare                    | Yes  | ?%         | ✔ Yes   |
