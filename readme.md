@@ -1,5 +1,5 @@
 
-<h1>Fallen Nightmare - 3.3.5a Server</h1>
+<h1>Fallen Nightmare - 3.3.5a Custom Server</h1>
 <p align="center">
   <img src="https://i.imgur.com/r2BD4Yq.jpg">
   </p>
