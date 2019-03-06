@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2018 TrinityCore <https://www.trinitycore.org/>
+ * Copyright (C) 2008-2019 TrinityCore <https://www.trinitycore.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -2914,20 +2914,14 @@ public:
             if (ghoulGuid.IsEmpty())
                 return;
 
-            oldAI = player->AI();
-            oldAIState = player->IsAIEnabled;
-            player->SetAI(new player_ghoulAI(player, ghoulGuid));
-            player->IsAIEnabled = true;
+            player->PushAI(new player_ghoulAI(player, ghoulGuid));
         }
 
         void OnRemove(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             Player* player = GetTarget()->ToPlayer();
 
-            player->IsAIEnabled = oldAIState;
-            PlayerAI* thisAI = player->AI();
-            player->SetAI(oldAI);
-            delete thisAI;
+            player->PopAI();
 
             // Dismiss ghoul if necessary
             if (Creature* ghoul = ObjectAccessor::GetCreature(*player, ghoulGuid))
@@ -2946,8 +2940,6 @@ public:
         }
 
         ObjectGuid ghoulGuid;
-        PlayerAI* oldAI = nullptr;
-        bool oldAIState = false;
     };
 
     AuraScript* GetAuraScript() const override

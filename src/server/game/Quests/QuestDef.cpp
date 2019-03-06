@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2018 TrinityCore <https://www.trinitycore.org/>
+ * Copyright (C) 2008-2019 TrinityCore <https://www.trinitycore.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -429,6 +429,7 @@ WorldPacket Quest::BuildQueryData(LocaleConstant loc) const
         response.Info.ObjectiveText[i] = locQuestObjectiveText[i];
 
     response.Write();
+    response.ShrinkToFit();
     return response.Move();
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2018 TrinityCore <https://www.trinitycore.org/>
+ * Copyright (C) 2008-2019 TrinityCore <https://www.trinitycore.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -809,7 +809,7 @@ SpellInfo::SpellInfo(SpellEntry const* spellEntry)
     BaseLevel = spellEntry->baseLevel;
     SpellLevel = spellEntry->spellLevel;
     DurationEntry = spellEntry->DurationIndex ? sSpellDurationStore.LookupEntry(spellEntry->DurationIndex) : nullptr;
-    PowerType = spellEntry->powerType;
+    PowerType = static_cast<Powers>(spellEntry->powerType);
     ManaCost = spellEntry->manaCost;
     ManaCostPerlevel = spellEntry->manaCostPerlevel;
     ManaPerSecond = spellEntry->manaPerSecond;
@@ -3162,7 +3162,7 @@ int32 SpellInfo::CalcPowerCost(WorldObject const* caster, SpellSchoolMask school
             return unitCaster->GetHealth();
         // Else drain all power
         if (PowerType < MAX_POWERS)
-            return unitCaster->GetPower(Powers(PowerType));
+            return unitCaster->GetPower(PowerType);
         TC_LOG_ERROR("spells", "SpellInfo::CalcPowerCost: Unknown power type '%d' in spell %d", PowerType, Id);
         return 0;
     }
@@ -3185,7 +3185,7 @@ int32 SpellInfo::CalcPowerCost(WorldObject const* caster, SpellSchoolMask school
             case POWER_FOCUS:
             case POWER_ENERGY:
             case POWER_HAPPINESS:
-                powerCost += int32(CalculatePct(unitCaster->GetMaxPower(Powers(PowerType)), ManaCostPercentage));
+                powerCost += int32(CalculatePct(unitCaster->GetMaxPower(PowerType), ManaCostPercentage));
                 break;
             case POWER_RUNE:
             case POWER_RUNIC_POWER:
@@ -3392,15 +3392,22 @@ bool _isPositiveEffectImpl(SpellInfo const* spellInfo, uint8 effIndex, std::unor
 
     visited.insert({ spellInfo->Id, effIndex });
 
+    //We need scaling level info for some auras that compute bp 0 or positive but should be debuffs
+    float bpScalePerLevel = spellInfo->Effects[effIndex].RealPointsPerLevel;
     int32 bp = spellInfo->Effects[effIndex].CalcValue();
     switch (spellInfo->SpellFamilyName)
     {
         case SPELLFAMILY_GENERIC:
             switch (spellInfo->Id)
             {
+                case 40268: // Spiritual Vengeance, Teron Gorefiend, Black Temple
                 case 61987: // Avenging Wrath Marker
                 case 61988: // Divine Shield exclude aura
+                case 64412: // Phase Punch, Algalon the Observer, Ulduar
+                case 72410: // Rune of Blood, Saurfang, Icecrown Citadel
+                case 71204: // Touch of Insignificance, Lady Deathwhisper, Icecrown Citadel
                     return false;
+                case 24732: // Bat Costume
                 case 30877: // Tag Murloc
                 case 61716: // Rabbit Costume
                 case 61734: // Noblegarden Bunny
@@ -3411,6 +3418,11 @@ bool _isPositiveEffectImpl(SpellInfo const* spellInfo, uint8 effIndex, std::unor
                 default:
                     break;
             }
+            break;
+        case SPELLFAMILY_ROGUE:
+            // Shadow of Death, Teron Gorefiend, Black Temple
+            if (spellInfo->Id == 40251)
+                return false;
             break;
         case SPELLFAMILY_MAGE:
             // Amplify Magic, Dampen Magic
@@ -3437,11 +3449,19 @@ bool _isPositiveEffectImpl(SpellInfo const* spellInfo, uint8 effIndex, std::unor
             // Aspect of the Viper
             if (spellInfo->Id == 34074)
                 return true;
+            // Explosive Shot
+            if (spellInfo->SpellFamilyFlags[1] == SPELLFAMILYFLAG1_HUNTER_EXPLOSIVE_SHOT)
+                return false;
             break;
         case SPELLFAMILY_DRUID:
             // Starfall
             if (spellInfo->SpellFamilyFlags[2] == 0x00000100)
                 return false;
+            break;
+        case SPELLFAMILY_DEATHKNIGHT:
+            if (spellInfo->SpellFamilyFlags[2] == 0x00000010) // Ebon Plague
+                return false;
+            break;
         default:
             break;
     }
@@ -3493,6 +3513,8 @@ bool _isPositiveEffectImpl(SpellInfo const* spellInfo, uint8 effIndex, std::unor
                 case SPELL_AURA_SCHOOL_HEAL_ABSORB:
                 case SPELL_AURA_CHANNEL_DEATH_ITEM:
                 case SPELL_AURA_EMPATHY:
+                case SPELL_AURA_MOD_DAMAGE_FROM_CASTER:
+                case SPELL_AURA_PREVENTS_FLEEING:
                     return false;
                 default:
                     break;
@@ -3605,17 +3627,19 @@ bool _isPositiveEffectImpl(SpellInfo const* spellInfo, uint8 effIndex, std::unor
             case SPELL_AURA_MOD_INCREASE_HEALTH_PERCENT:
             case SPELL_AURA_MOD_TOTAL_STAT_PERCENTAGE:
             case SPELL_AURA_MOD_INCREASE_SWIM_SPEED:
-                if (bp < 0)
+                if (bp < 0 || bpScalePerLevel < 0) //TODO: What if both are 0? Should it be a buff or debuff?
                     return false;
                 break;
             case SPELL_AURA_MOD_ATTACKSPEED:            // some buffs have negative bp, check both target and bp
             case SPELL_AURA_MOD_MELEE_HASTE:
+            case SPELL_AURA_HASTE_RANGED:
             case SPELL_AURA_MOD_RESISTANCE_PCT:
             case SPELL_AURA_MOD_RATING:
             case SPELL_AURA_MOD_ATTACK_POWER:
             case SPELL_AURA_MOD_RANGED_ATTACK_POWER:
             case SPELL_AURA_MOD_DAMAGE_PERCENT_DONE:
-                if (!_isPositiveTarget(spellInfo, effIndex) && bp < 0)
+            case SPELL_AURA_MOD_SPEED_SLOW_ALL:
+                if (!_isPositiveTarget(spellInfo, effIndex) || bp < 0)
                     return false;
                 break;
             case SPELL_AURA_MOD_DAMAGE_TAKEN:           // dependent from basepoint sign (positive -> negative)
@@ -3625,6 +3649,7 @@ bool _isPositiveEffectImpl(SpellInfo const* spellInfo, uint8 effIndex, std::unor
             case SPELL_AURA_MOD_ATTACKER_SPELL_CRIT_CHANCE:
             case SPELL_AURA_MOD_POWER_COST_SCHOOL:
             case SPELL_AURA_MOD_POWER_COST_SCHOOL_PCT:
+            case SPELL_AURA_MOD_MECHANIC_DAMAGE_TAKEN_PERCENT:
                 if (bp > 0)
                     return false;
                 break;
