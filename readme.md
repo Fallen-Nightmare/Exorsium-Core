@@ -87,7 +87,7 @@ WHY PLAY AT OUR SERVER, WHAT CAN WE OFFER AND GUARANTEED?
 |Scholomance|Yes |100%|✔ Yes |
 |Razorfen Downs|Yes |100%|✔ Yes |
 |Strathholme: Main Gate|Yes |100%|✔ Yes |
-|Strathholme: Service Entrance|Yes |100%|✔ Yes |
+|Strathholme: Service Entrance|Yes |40%|✔ Yes |
 |Zul'Farrak|Yes |100%|✔ Yes |
 |Blackrock Depths: Detention Block|Yes |100%|✔ Yes |
 |Blackrock Depths: Upper City|Yes |100%|✔ Yes |
@@ -97,10 +97,10 @@ WHY PLAY AT OUR SERVER, WHAT CAN WE OFFER AND GUARANTEED?
 
 |Vanilla Raids : | Work | Scripted % | Checked |
 |-------------------|------|-------|------|
-|Molten Core|Yes|90%|✔ Yes|
-|Blackwing Lair|Yes|90%|✔ Yes|
-|Ruins of Ahn'Qiraj|Yes|?%|❌ No|
-|Temple of Ahn'Qiraj|Yes|?%|❌ No|
+|Molten Core|Yes|100%|✔ Yes|
+|Blackwing Lair|Yes|100%|✔ Yes|
+|Ruins of Ahn'Qiraj|Yes|100%|✔ Yes|
+|Temple of Ahn'Qiraj|Yes|80%|✔ Yes|
 
 
 
