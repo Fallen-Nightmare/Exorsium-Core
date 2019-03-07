@@ -67,32 +67,32 @@ WHY PLAY AT OUR SERVER, WHAT CAN WE OFFER AND GUARANTEED?
 
 |Vanilla instances : | Work | Scripted % | Checked |
 |-------------------|------|-------|------|
-| Ragefire Chasm|Yes |?%|❌No|
-| Deadmines|Yes |?%|❌No|
-| Wailing Caverns|Yes|?%|❌No|
-|Shadowfang Keep|Yes |?%|❌No |
-|Blackfathom Deeps|Yes |?%|❌No |
-|Stockade|Yes |?%|❌No |
-|Gnomeragan|Yes |?%|❌No |
-|Razorfen Kraul|Yes |?%|❌No |
-|Maraudon: Wicked Grotto|Yes |?%|❌No |
-|Maraudon: Foulspore Cavern|Yes |?%|❌No |
-|Maraudon: Earth Song Falls|Yes |?%|❌No |
-|Scarlet Halls|Yes |?%|❌No |
-|Scarlet Monestery|Yes |?%|❌No |
-|Uldaman|Yes |?%|❌No |
-|Dire Maul: Warpwood Quarter|Yes |?%|❌No |
-|Dire Maul: Capital Gardens|Yes |?%|❌No |
-|Dire Maul: Gordock Commons|Yes |?%|❌No |
-|Scholomance|Yes |?%|❌No |
-|Razorfen Downs|Yes |?%|❌No |
-|Strathholme: Main Gate|Yes |?%|❌No |
-|Strathholme: Service Entrance|Yes |?%|❌No |
-|Zul'Farrak|Yes |?%|❌No |
-|Blackrock Depths: Detention Block|Yes |?%|❌No |
-|Blackrock Depths: Upper City|Yes |?%|❌No |
-|Temple of Atal'Hakkar|Yes |?%|❌No |
-|Lower Blackrock Spire|Yes |?%|❌No |
+| Ragefire Chasm|Yes |100%|✔ Yes|
+| Deadmines|Yes |100%|✔ Yes|
+| Wailing Caverns|Yes|100%|✔ Yes|
+|Shadowfang Keep|Yes |100%|✔ Yes |
+|Blackfathom Deeps|Yes |100%|✔ Yes |
+|Stockade|Yes |100%|✔ Yes |
+|Gnomeragan|Yes |100%|✔ Yes |
+|Razorfen Kraul|Yes |100%|✔ Yes |
+|Maraudon: Wicked Grotto|Yes |100%|✔ Yes |
+|Maraudon: Foulspore Cavern|Yes |100%|✔ Yes |
+|Maraudon: Earth Song Falls|Yes |100%|✔ Yes |
+|Scarlet Halls|Yes |100%|✔ Yes |
+|Scarlet Monestery|Yes |100%|✔ Yes |
+|Uldaman|Yes |100%|✔ Yes |
+|Dire Maul: Warpwood Quarter|Yes |100%|✔ Yes |
+|Dire Maul: Capital Gardens|Yes |100%|✔ Yes |
+|Dire Maul: Gordock Commons|Yes |100%|✔ Yes |
+|Scholomance|Yes |100%|✔ Yes |
+|Razorfen Downs|Yes |100%|✔ Yes |
+|Strathholme: Main Gate|Yes |100%|✔ Yes |
+|Strathholme: Service Entrance|Yes |100%|✔ Yes |
+|Zul'Farrak|Yes |100%|✔ Yes |
+|Blackrock Depths: Detention Block|Yes |100%|✔ Yes |
+|Blackrock Depths: Upper City|Yes |100%|✔ Yes |
+|Temple of Atal'Hakkar|Yes |100%|✔ Yes |
+|Lower Blackrock Spire|Yes |100%|✔ Yes |
 <br/>
 
 |Vanilla Raids : | Work | Scripted % | Checked |
