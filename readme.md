@@ -36,7 +36,7 @@ find the joy in playing a private server again.
 WHY PLAY AT OUR SERVER, WHAT CAN WE OFFER AND GUARANTEED?
 
 ▪ Dedicated Server,<br/>▪ 2 Realm, [Exorsium] Semi-Blizzlike , [Exorsium] Beta<br/>▪ DDoS Protection,<br/>
-▪ 1000 mb/s connection,<br/>
+▪ 990 mb/s connection,<br/>
 ▪ Stability ( 98% UPTIME, 24/7 ),<br/>
 ▪ Competent Game Masters,
 ▪ Quick Support Response (within 1-2,/ or maximum 24 hours - for tickets whats sent by our system),<br/>
@@ -67,39 +67,39 @@ WHY PLAY AT OUR SERVER, WHAT CAN WE OFFER AND GUARANTEED?
 
 |Vanilla instances : | Work | Scripted % | Checked |
 |-------------------|------|-------|------|
-| Ragefire Chasm|Yes |100%|✔ Yes|
-| Deadmines|Yes |100%|✔ Yes|
-| Wailing Caverns|Yes|100%|✔ Yes|
-|Shadowfang Keep|Yes |100%|✔ Yes |
-|Blackfathom Deeps|Yes |100%|✔ Yes |
-|Stockade|Yes |100%|✔ Yes |
-|Gnomeragan|Yes |100%|✔ Yes |
-|Razorfen Kraul|Yes |100%|✔ Yes |
-|Maraudon: Wicked Grotto|Yes |100%|✔ Yes |
-|Maraudon: Foulspore Cavern|Yes |100%|✔ Yes |
-|Maraudon: Earth Song Falls|Yes |100%|✔ Yes |
-|Scarlet Halls|Yes |100%|✔ Yes |
-|Scarlet Monestery|Yes |100%|✔ Yes |
-|Uldaman|Yes |100%|✔ Yes |
-|Dire Maul: Warpwood Quarter|Yes |100%|✔ Yes |
-|Dire Maul: Capital Gardens|Yes |100%|✔ Yes |
-|Dire Maul: Gordock Commons|Yes |100%|✔ Yes |
-|Scholomance|Yes |100%|✔ Yes |
-|Razorfen Downs|Yes |100%|✔ Yes |
-|Strathholme: Main Gate|Yes |100%|✔ Yes |
+| Ragefire Chasm|Yes |99%|✔ Yes|
+| Deadmines|Yes |99%|✔ Yes|
+| Wailing Caverns|Yes|99%|✔ Yes|
+|Shadowfang Keep|Yes |99%|✔ Yes |
+|Blackfathom Deeps|Yes |99%|✔ Yes |
+|Stockade|Yes |99%|✔ Yes |
+|Gnomeragan|Yes |99%|✔ Yes |
+|Razorfen Kraul|Yes |99%|✔ Yes |
+|Maraudon: Wicked Grotto|Yes |99%|✔ Yes |
+|Maraudon: Foulspore Cavern|Yes |99%|✔ Yes |
+|Maraudon: Earth Song Falls|Yes |99%|✔ Yes |
+|Scarlet Halls|Yes |99%|✔ Yes |
+|Scarlet Monestery|Yes |99%|✔ Yes |
+|Uldaman|Yes |99%|✔ Yes |
+|Dire Maul: Warpwood Quarter|Yes |99%|✔ Yes |
+|Dire Maul: Capital Gardens|Yes |99%|✔ Yes |
+|Dire Maul: Gordock Commons|Yes |99%|✔ Yes |
+|Scholomance|Yes |99%|✔ Yes |
+|Razorfen Downs|Yes |99%|✔ Yes |
+|Strathholme: Main Gate|Yes |99%|✔ Yes |
 |Strathholme: Service Entrance|Yes |40%|✔ Yes |
-|Zul'Farrak|Yes |100%|✔ Yes |
-|Blackrock Depths: Detention Block|Yes |100%|✔ Yes |
-|Blackrock Depths: Upper City|Yes |100%|✔ Yes |
-|Temple of Atal'Hakkar|Yes |100%|✔ Yes |
-|Lower Blackrock Spire|Yes |100%|✔ Yes |
+|Zul'Farrak|Yes |99%|✔ Yes |
+|Blackrock Depths: Detention Block|Yes |99%|✔ Yes |
+|Blackrock Depths: Upper City|Yes |99%|✔ Yes |
+|Temple of Atal'Hakkar|Yes |99%|✔ Yes |
+|Lower Blackrock Spire|Yes |99%|✔ Yes |
 <br/>
 
 |Vanilla Raids : | Work | Scripted % | Checked |
 |-------------------|------|-------|------|
-|Molten Core|Yes|100%|✔ Yes|
-|Blackwing Lair|Yes|100%|✔ Yes|
-|Ruins of Ahn'Qiraj|Yes|100%|✔ Yes|
+|Molten Core|Yes|99%|✔ Yes|
+|Blackwing Lair|Yes|99%|✔ Yes|
+|Ruins of Ahn'Qiraj|Yes|99%|✔ Yes|
 |Temple of Ahn'Qiraj|Yes|80%|✔ Yes|
 
 
